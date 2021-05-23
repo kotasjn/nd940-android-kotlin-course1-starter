@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">ShoeStore</string>
+    <string name="next_button">Next</string>
     <!-- Strings related to login -->
     <string name="login_title">Login</string>
     <string name="login_label">fragment_login</string>
@@ -10,7 +11,10 @@
     <!-- Strings related to welcome page -->
     <string name="welcome_title">Welcome</string>
     <string name="welcome_label">fragment_welcome</string>
-    <string name="welcome_message">Welcome to the ShopStore app!</string>
+    <string name="welcome_message">Welcome to ShopStore!</string>
     <string name="welcome_message2">As a developer I am very proud that you chose my app.</string>
-    <string name="next_button">Next</string>
+    <!-- Strings related to instruction page -->
+    <string name="instruction_title">Instruction</string>
+    <string name="instruction_label">fragment_instruction</string>
+    <string name="instruction_list">1. ...\n2. ...\n3. ...</string>
 </resources>

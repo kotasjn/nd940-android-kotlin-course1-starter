@@ -21,7 +21,7 @@ class LoginFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
         val view = binding.root
 
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.login_title)
+        (activity as AppCompatActivity).supportActionBar?.hide()
 
         binding.loginButton.setOnClickListener { onButtonPressed(view) }
         binding.registerButton.setOnClickListener { onButtonPressed(view) }

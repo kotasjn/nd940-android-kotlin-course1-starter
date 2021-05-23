@@ -1,28 +1,27 @@
 package com.udacity.shoestore
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
-import com.udacity.shoestore.databinding.FragmentWelcomeBinding
+import androidx.fragment.app.Fragment
+import com.udacity.shoestore.databinding.FragmentInstructionBinding
 
+class InstructionFragment : Fragment() {
 
-class WelcomeFragment : Fragment() {
-
-    private lateinit var binding: FragmentWelcomeBinding
+    private lateinit var binding: FragmentInstructionBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instruction, container, false)
         val view = binding.root
 
-        (activity as AppCompatActivity).supportActionBar?.hide()
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.instruction_title)
+        (activity as AppCompatActivity).supportActionBar?.show()
 
         binding.nextButton.setOnClickListener { onButtonPressed(view) }
 
@@ -30,7 +29,6 @@ class WelcomeFragment : Fragment() {
     }
 
     private fun onButtonPressed(view: View) {
-        val action = WelcomeFragmentDirections.actionWelcomeFragmentToInstructionFragment()
-        view.findNavController().navigate(action)
+
     }
 }
