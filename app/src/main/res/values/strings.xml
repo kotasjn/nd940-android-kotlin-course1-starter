@@ -8,5 +8,9 @@
     <string name="action_sign_in">Sign in</string>
     <string name="action_register">Register</string>
     <!-- Strings related to welcome page -->
-    <string name="welcome">"Welcome!"</string>
+    <string name="welcome_title">Welcome</string>
+    <string name="welcome_label">fragment_welcome</string>
+    <string name="welcome_message">Welcome to the ShopStore app!</string>
+    <string name="welcome_message2">As a developer I am very proud that you chose my app.</string>
+    <string name="next_button">Next</string>
 </resources>
