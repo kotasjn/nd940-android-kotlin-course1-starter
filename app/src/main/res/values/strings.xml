@@ -3,22 +3,21 @@
 	<string name="next_button">Next</string>
 	<!-- Strings related to login -->
 	<string name="login_title">Login</string>
-	<string name="login_label">fragment_login</string>
 	<string name="email">Email</string>
 	<string name="password">Password</string>
 	<string name="action_sign_in">Sign in</string>
 	<string name="action_register">Register</string>
 	<!-- Strings related to welcome page -->
 	<string name="welcome_title">Welcome</string>
-	<string name="welcome_label">fragment_welcome</string>
 	<string name="welcome_message">Welcome to ShopStore!</string>
 	<string name="welcome_message2">As a developer I am very proud that you chose my app.</string>
 	<!-- Strings related to instruction page -->
 	<string name="instruction_title">Instruction</string>
-	<string name="instruction_label">fragment_instruction</string>
 	<string name="instruction_header">Core instructions</string>
 	<string name="instruction_paragraph_1">Instruction 1</string>
 	<string name="instruction_paragraph_2">Instruction 2</string>
 	<string name="instruction_paragraph_3">Instruction 3</string>
 	<string name="instruction_paragraph_4">Instruction 4</string>
+	<!-- Strings related to shoe list page -->
+	<string name="shoe_list_title">Shoes</string>
 </resources>

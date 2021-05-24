@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.udacity.shoestore.databinding.FragmentInstructionBinding
 
 class InstructionFragment : Fragment() {
@@ -29,6 +30,7 @@ class InstructionFragment : Fragment() {
     }
 
     private fun onButtonPressed(view: View) {
-
+        val action = InstructionFragmentDirections.actionInstructionFragmentToShoeListFragment()
+        view.findNavController().navigate(action)
     }
 }
