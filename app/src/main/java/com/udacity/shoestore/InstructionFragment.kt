@@ -21,9 +21,6 @@ class InstructionFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instruction, container, false)
         val view = binding.root
 
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.instruction_title)
-        (activity as AppCompatActivity).supportActionBar?.show()
-
         binding.nextButton.setOnClickListener { onButtonPressed(view) }
 
         return view

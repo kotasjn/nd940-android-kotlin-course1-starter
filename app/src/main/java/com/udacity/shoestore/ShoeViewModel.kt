@@ -7,6 +7,10 @@ import com.udacity.shoestore.models.Shoe
 
 class ShoeViewModel : ViewModel() {
 
+    private val _shoe = MutableLiveData<Shoe>()
+    val shoe: LiveData<Shoe>
+        get() = _shoe
+
     private val _shoeList = MutableLiveData<List<Shoe>>()
     val shoeList: LiveData<List<Shoe>>
         get() = _shoeList
@@ -21,4 +25,7 @@ class ShoeViewModel : ViewModel() {
         _shoeList.value = shoes
     }
 
+    fun chooseShoeItem(position: Int) {
+        _shoe.value = _shoeList.value?.get(position)
+    }
 }
