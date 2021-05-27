@@ -1,24 +1,32 @@
 <resources>
 	<string name="app_name">ShoeStore</string>
 	<string name="next_button">Next</string>
+	<string name="logout">Logout</string>
 	<!-- Strings related to login -->
 	<string name="login_title">Login</string>
 	<string name="email">Email</string>
 	<string name="password">Password</string>
 	<string name="action_sign_in">Sign in</string>
 	<string name="action_register">Register</string>
+	<string name="logo_description">Logo with vectorized person</string>
 	<!-- Strings related to welcome page -->
 	<string name="welcome_title">Welcome</string>
 	<string name="welcome_message">Welcome to ShopStore!</string>
 	<string name="welcome_message2">As a developer I am very proud that you chose my app.</string>
+	<string name="waving_hand_description">Waving hand image</string>
 	<!-- Strings related to instruction page -->
 	<string name="instruction_title">Instruction</string>
-	<string name="instruction_paragraph_1">Instruction 1</string>
-	<string name="instruction_paragraph_2">Instruction 2</string>
-	<string name="instruction_paragraph_3">Instruction 3</string>
-	<string name="instruction_paragraph_4">Instruction 4</string>
+	<string name="instruction_paragraph_1">On the next page there is list of shoes. You can either edit existing shoe by tapping on its item or create a new shoe by tapping on "plus" circle button in right bottom corner.</string>
+	<string name="instruction_paragraph_2">In both cases a new layout is displayed. This detail layout contains several inputs that are either filled or empty regarding your previous action.</string>
+	<string name="instruction_paragraph_3">To save an existing or new shoe, you must fill all displayed entries.</string>
 	<!-- Strings related to shoe list page -->
 	<string name="shoe_list_title">Shoes</string>
+	<string name="create_new_shoe_button_description">Create new shoe button</string>
 	<!-- Strings related to shoe detail page -->
 	<string name="shoe_detail_title">Detail</string>
+	<string name="name">Name</string>
+	<string name="company">Company</string>
+	<string name="size">Size</string>
+	<string name="description">Description</string>
+	<string name="save">Save</string>
 </resources>

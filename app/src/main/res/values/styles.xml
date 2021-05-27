@@ -29,4 +29,13 @@
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
     </style>
+
+    <style name="InputLabelTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="InputEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -20,7 +21,7 @@ class ShoeListFragment : Fragment() {
 
     private lateinit var binding: FragmentShoeListBinding
 
-    private lateinit var viewModel: ShoeViewModel
+    private val viewModel: ShoeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,13 +30,7 @@ class ShoeListFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
 
         val actionBar = (activity as AppCompatActivity).supportActionBar
-        actionBar?.title = getString(R.string.shoe_list_title)
-        actionBar?.show()
         actionBar?.setDisplayHomeAsUpEnabled(false)
-
-        setHasOptionsMenu(true)
-
-        viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
 
         viewModel.shoeList.observe(viewLifecycleOwner, this::addShoesIntoView)
 
@@ -62,7 +57,8 @@ class ShoeListFragment : Fragment() {
     }
 
     private fun openDetailFragment(newShoe: Boolean) {
-        val action = ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment(newShoe)
+        if (newShoe) viewModel.newShoeItem()
+        val action = ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment()
         view?.findNavController()?.navigate(action)
     }
 }

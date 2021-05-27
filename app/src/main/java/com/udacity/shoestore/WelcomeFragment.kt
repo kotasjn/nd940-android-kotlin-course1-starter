@@ -22,7 +22,8 @@ class WelcomeFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
         val view = binding.root
 
-        (activity as AppCompatActivity).supportActionBar?.hide()
+        val actionBar = (activity as AppCompatActivity).supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(false)
 
         binding.nextButton.setOnClickListener { onButtonPressed(view) }
 

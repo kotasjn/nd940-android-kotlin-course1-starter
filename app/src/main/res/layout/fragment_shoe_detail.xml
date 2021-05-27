@@ -4,6 +4,9 @@
 	xmlns:tools="http://schemas.android.com/tools">
 
 	<data>
+
+		<import type="com.udacity.shoestore.StringDoubleConvertor" />
+
 		<variable
 			name="viewModel"
 			type="com.udacity.shoestore.ShoeViewModel" />
@@ -11,52 +14,116 @@
 
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		tools:context=".ShoeDetailFragment">
+		android:layout_height="match_parent">
 
-		<TextView
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			app:layout_constraintBottom_toTopOf="@+id/save_button"
+			app:layout_constraintTop_toTopOf="parent">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="@dimen/space_16dp"
+				tools:context=".ShoeDetailFragment">
+
+				<TextView
+					android:id="@+id/shoe_name_label"
+					style="@style/InputLabelTextView"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:labelFor="@id/shoe_name_input"
+					android:text="@string/name" />
+
+				<EditText
+					android:id="@+id/shoe_name_input"
+					style="@style/InputEditText"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/space_8dp"
+					android:importantForAutofill="no"
+					android:inputType="text"
+					android:text="@={viewModel.shoe.name}"
+					tools:text="Asics Gel Nimbus 23" />
+
+				<TextView
+					android:id="@+id/brand_name_label"
+					style="@style/InputLabelTextView"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/space_16dp"
+					android:labelFor="@id/shoe_company_input"
+					android:text="@string/company" />
+
+				<EditText
+					android:id="@+id/shoe_company_input"
+					style="@style/InputEditText"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/space_8dp"
+					android:importantForAutofill="no"
+					android:inputType="text"
+					android:text="@={viewModel.shoe.company}"
+					tools:text="Asics" />
+
+				<TextView
+					android:id="@+id/shoe_size_label"
+					style="@style/InputLabelTextView"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/space_16dp"
+					android:labelFor="@id/shoe_size_input"
+					android:text="@string/size" />
+
+				<EditText
+					android:id="@+id/shoe_size_input"
+					style="@style/InputEditText"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/space_8dp"
+					android:importantForAutofill="no"
+					android:inputType="number"
+					android:text='@={StringDoubleConvertor.doubleToString(viewModel.shoe.size)}'
+					tools:text="42.0" />
+
+				<TextView
+					android:id="@+id/shoe_description_label"
+					style="@style/InputLabelTextView"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/space_16dp"
+					android:labelFor="@id/shoe_description_input"
+					android:text="@string/description" />
+
+				<EditText
+					android:id="@+id/shoe_description_input"
+					style="@style/InputEditText"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="@dimen/space_8dp"
+					android:importantForAutofill="no"
+					android:inputType="text"
+					android:text="@={viewModel.shoe.description}"
+					tools:text="Great design, perfect feeling" />
+
+			</LinearLayout>
+
+		</ScrollView>
+
+		<Button
+			android:id="@+id/save_button"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:text="Name"
-			android:layout_marginTop="@dimen/fragment_vertical_margin"
-			android:layout_marginStart="@dimen/fragment_horizontal_margin"
-			android:layout_marginEnd="@dimen/fragment_horizontal_margin"
+			android:layout_marginStart="16dp"
+			android:layout_marginEnd="16dp"
+			android:layout_marginBottom="16dp"
+			android:text="@string/save"
+			android:theme="@style/PrimaryButton"
+			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
-
-		<TextView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text="Brand"
-			android:layout_marginTop="@dimen/fragment_vertical_margin"
-			android:layout_marginStart="@dimen/fragment_horizontal_margin"
-			android:layout_marginEnd="@dimen/fragment_horizontal_margin"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
-
-		<TextView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text="Size"
-			android:layout_marginTop="@dimen/fragment_vertical_margin"
-			android:layout_marginStart="@dimen/fragment_horizontal_margin"
-			android:layout_marginEnd="@dimen/fragment_horizontal_margin"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
-
-		<TextView
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:text="Description"
-			android:layout_marginTop="@dimen/fragment_vertical_margin"
-			android:layout_marginStart="@dimen/fragment_horizontal_margin"
-			android:layout_marginEnd="@dimen/fragment_horizontal_margin"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
+			app:layout_constraintStart_toStartOf="parent" />
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
 

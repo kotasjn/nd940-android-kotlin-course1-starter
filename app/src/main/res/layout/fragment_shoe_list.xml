@@ -7,8 +7,7 @@
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:layout_marginTop="8dp"
-		android:layout_marginBottom="8dp">
+		android:layout_marginTop="8dp">
 
 		<ScrollView
 			android:layout_width="match_parent"
@@ -30,12 +29,12 @@
 			android:id="@+id/floating_button"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:layout_marginEnd="@dimen/space_16dp"
+			android:layout_marginBottom="@dimen/space_16dp"
+			android:contentDescription="@string/create_new_shoe_button_description"
 			android:src="@drawable/ic_add"
-			android:layout_marginEnd="@dimen/fragment_horizontal_margin"
-			android:layout_marginBottom="@dimen/fragment_vertical_margin"
 			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintEnd_toEndOf="parent"
-			android:contentDescription="TODO" />
+			app:layout_constraintEnd_toEndOf="parent" />
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
