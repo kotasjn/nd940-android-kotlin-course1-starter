@@ -27,20 +27,7 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.popup_menu, menu)
-        return true
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.logout -> {
-            val navigateTo = NavigationDirections.actionToLoginFragment()
-            navController.navigate(navigateTo)
-            true
-        }
-        else -> {
-            super.onOptionsItemSelected(item)
-        }
-    }
+
+
 }

@@ -21,6 +21,9 @@ class InstructionFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instruction, container, false)
         val view = binding.root
 
+        val actionBar = (activity as AppCompatActivity).supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(false)
+
         binding.nextButton.setOnClickListener { onButtonPressed(view) }
 
         return view
