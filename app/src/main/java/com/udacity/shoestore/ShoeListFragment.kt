@@ -2,17 +2,14 @@ package com.udacity.shoestore
 
 import android.os.Bundle
 import android.view.*
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.databinding.ItemShoeBinding
 import com.udacity.shoestore.models.Shoe
 
 
@@ -57,18 +54,21 @@ class ShoeListFragment : Fragment() {
 
     private fun addShoesIntoView(shoeList: List<Shoe>) {
         for ((index, shoe) in shoeList.withIndex()) {
-            val textView = TextView(context, null, 0, R.style.ShoeItemTextView)
-            textView.layoutParams = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
+
+            val shoeItemBinding = ItemShoeBinding.inflate(
+                layoutInflater,
+                null,
+                false
             )
 
-            textView.text = String.format("%s, %s, %.1f", shoe.name, shoe.company, shoe.size)
-            textView.setOnClickListener {
+            shoeItemBinding.shoe = shoe
+
+            shoeItemBinding.root.setOnClickListener {
                 viewModel.chooseShoeItem(index)
                 openDetailFragment(false)
             }
-            binding.listLayout.addView(textView)
+
+            binding.listLayout.addView(shoeItemBinding.root)
         }
     }
 
