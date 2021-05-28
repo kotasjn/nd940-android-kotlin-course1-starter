@@ -12,6 +12,9 @@
 			type="com.udacity.shoestore.ShoeViewModel" />
 	</data>
 
+	<!-- This layout is very similar to Instructions layout. There is one bottom layout that has to be
+	 always to the bottom. This button is not scrollable so I used this ConstraintLayout to position
+	 ScrollView and button below.-->
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
@@ -22,6 +25,7 @@
 			app:layout_constraintBottom_toTopOf="@+id/save_button"
 			app:layout_constraintTop_toTopOf="parent">
 
+			<!-- The rest of the layout is simple and suitable for using LinearLayout. -->
 			<LinearLayout
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"

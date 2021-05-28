@@ -8,6 +8,8 @@
 		android:layout_height="match_parent"
 		tools:context="LoginFragment">
 
+		<!-- This layout is simple enough to justify usage of LinearLayout because all views are positioned
+		 below each other. So in this case I used LinearLayout that has vertical orientation.-->
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"

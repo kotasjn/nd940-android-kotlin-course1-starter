@@ -9,6 +9,8 @@
 			type="com.udacity.shoestore.models.Shoe" />
 	</data>
 
+	<!-- This LinearLayout was added to make CardView margin working. Otherwise
+	it is not necessary here. -->
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content">
@@ -19,6 +21,8 @@
 		android:layout_margin="@dimen/space_8dp"
 		android:foreground="?attr/selectableItemBackgroundBorderless">
 
+		<!-- In case of positioning textview in this view it is better to use one ConstraintLayout
+		 instead of two nested LinearLayouts. -->
 		<androidx.constraintlayout.widget.ConstraintLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content">

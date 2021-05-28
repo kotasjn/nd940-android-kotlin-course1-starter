@@ -4,10 +4,12 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	tools:context=".ShoeListFragment">
 
+	<!-- I used ConstraintLayout here for positioning FloatingActionButton.-->
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
 
+		<!-- ScrollView is necessary due to landscape support. -->
 		<ScrollView
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
@@ -16,6 +18,7 @@
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent">
 
+			<!-- Shoe items are placed inside this LinearLayout. -->
 			<LinearLayout
 				android:id="@+id/list_layout"
 				android:layout_width="match_parent"
